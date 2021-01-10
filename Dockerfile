@@ -10,12 +10,15 @@ RUN echo -e 'set-option -g prefix C-a\n \
 	bind-key C-a send-prefix\n \
 	setw -g mode-keys vi\n' > /root/.tmux.conf
 
-RUN mv /usr/share/webapps/dokuwiki /usr/share/webapps/note/
-RUN mkdir /usr/share/webapps/dokuwiki
-RUN mv /usr/share/webapps/note /usr/share/webapps/dokuwiki/note
-RUN cp -r /usr/share/webapps/dokuwiki/note /usr/share/webapps/dokuwiki/blog
+RUN cp -pr /usr/share/webapps/dokuwiki /tmp/notehome
+RUN cp -pr /tmp/notehome /usr/share/webapps/dokuwiki/note
+RUN mv /tmp/notehome /usr/share/webapps/dokuwiki/blog
 
-
+RUN cp -pr /var/lib/dokuwiki /tmp/notedata
+RUN cp -pr /tmp/notedata /var/lib/dokuwiki/note
+RUN mv /tmp/notedata /var/lib/dokuwiki/blog
+RUN rm /usr/share/webapps/dokuwiki/note/data && ln -s ../../../../../var/lib/dokuwiki/note/data /usr/share/webapps/dokuwiki/note/data
+RUN rm /usr/share/webapps/dokuwiki/blog/data && ln -s ../../../../../var/lib/dokuwiki/blog/data /usr/share/webapps/dokuwiki/blog/data
 
 ADD entry.sh /
 CMD ["/entry.sh"]
