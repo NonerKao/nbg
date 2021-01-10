@@ -15,5 +15,7 @@ RUN mkdir /usr/share/webapps/dokuwiki
 RUN mv /usr/share/webapps/note /usr/share/webapps/dokuwiki/note
 RUN cp -r /usr/share/webapps/dokuwiki/note /usr/share/webapps/dokuwiki/blog
 
+
+
 ADD entry.sh /
 CMD ["/entry.sh"]

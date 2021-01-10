@@ -21,7 +21,4 @@ tmux send-keys -t "=$NAME:=server" \
 	"nginx" \
 	Enter
 
-tmux new-window -d -t "=$NAME" -n 'sshd'
-tmux send-keys -t "=$NAME:=sshd" "/sbin/sshd -D" Enter
-
 tmux attach-session -t "=$NAME"
