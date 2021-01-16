@@ -1,0 +1,4 @@
+baseURL = "http://www.m101.nthu.edu.tw/~s101062801/blog"
+languageCode = "en-us"
+title = "Hollow Nightmare"
+theme = "console"

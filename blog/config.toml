@@ -1,0 +1,4 @@
+baseURL = "http://localhost:8327/blog"
+languageCode = "en-us"
+title = "Hollow Nightmare"
+theme = "console"

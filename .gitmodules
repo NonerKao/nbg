@@ -1,0 +1,3 @@
+[submodule "blog/themes/console"]
+	path = blog/themes/console
+	url = git@github.com:mrmierzejewski/hugo-theme-console.git
