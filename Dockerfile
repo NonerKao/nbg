@@ -23,7 +23,7 @@ RUN cp -pr /etc/webapps/dokuwiki /tmp/noteconf
 RUN cp -pr /tmp/noteconf /etc/webapps/dokuwiki/note
 RUN rm /usr/share/webapps/dokuwiki/note/conf && ln -s ../../../../../etc/webapps/dokuwiki/note /usr/share/webapps/dokuwiki/note/conf
 
-ADD blog /usr/share/webapps/dokuwiki/blog
+ADD blog /root/blog
 
 ADD entry.sh /
 CMD ["/entry.sh"]

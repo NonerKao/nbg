@@ -23,7 +23,7 @@ tmux send-keys -t "=$NAME:=server" \
 
 tmux new-window -d -t "=$NAME" -n 'hugo'
 tmux send-keys -t "=$NAME:=hugo" \
-	"cd /usr/share/webapps/dokuwiki/blog && hugo && hugo serve" \
+	"cd /root/blog && hugo -d /usr/share/webapps/dokuwiki/blog" \
 	Enter
 
 tmux attach-session -t "=$NAME"
